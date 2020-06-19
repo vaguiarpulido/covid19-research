@@ -1,0 +1,50 @@
+SampleCode	Line	Virus	Treatment	Condition	TimePoint	BiolRep	Strain	Batch
+Series1_NHBE_Mock_1	NHBE	Mock	Mock treatment	Control	24hrs after treatment	1		Series1
+Series1_NHBE_Mock_2	NHBE	Mock	Mock treatment	Control	24hrs after treatment	2		Series1
+Series1_NHBE_Mock_3	NHBE	Mock	Mock treatment	Control	24hrs after treatment	3		Series1
+Series1_NHBE_SARS-CoV-2_1	NHBE	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24hrs after treatment	1	USA-WA1/2020	Series1
+Series1_NHBE_SARS-CoV-2_2	NHBE	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24hrs after treatment	2	USA-WA1/2020	Series1
+Series1_NHBE_SARS-CoV-2_3	NHBE	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24hrs after treatment	3	USA-WA1/2020	Series1
+Series2_A549_Mock_1	A549	Mock	Mock treatment	Control	24hrs after treatment	1		Series2
+Series2_A549_Mock_2	A549	Mock	Mock treatment	Control	24hrs after treatment	2		Series2
+Series2_A549_Mock_3	A549	Mock	Mock treatment	Control	24hrs after treatment	3		Series2
+Series2_A549_SARS-CoV-2_1	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 0.2)	Infected	24hrs after treatment	1	USA-WA1/2020	Series2
+Series2_A549_SARS-CoV-2_2	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 0.2)	Infected	24hrs after treatment	2	USA-WA1/2020	Series2
+Series2_A549_SARS-CoV-2_3	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 0.2)	Infected	24hrs after treatment	3	USA-WA1/2020	Series2
+Series3_A549_Mock_1	A549	Mock	Mock treatment	Control	24hrs after treatment	1		Series3
+Series3_A549_Mock_2	A549	Mock	Mock treatment	Control	24hrs after treatment	2		Series3
+Series3_A549_RSV_1	A549	RSV	RSV infected (MOI 15)	Infected	24hrs after treatment	1	A2	Series3
+Series3_A549_RSV_2	A549	RSV	RSV infected (MOI 15)	Infected	24hrs after treatment	2	A2	Series3
+Series4_A549_IAV_1	A549	IAV	IAV infected (MOI 5)	Infected	9hrs after treatment	1	A/Puerto Rico/8/1934 (H1N1)	Series4
+Series4_A549_IAV_2	A549	IAV	IAV infected (MOI 5)	Infected	9hrs after treatment	2	A/Puerto Rico/8/1934 (H1N1)	Series4
+Series4_A549_Mock_1	A549	Mock	Mock treatment	Control	9hrs after treatment	1		Series4
+Series4_A549_Mock_2	A549	Mock	Mock treatment	Control	9hrs after treatment	2		Series4
+Series5_A549_Mock_1	A549	Mock	Mock treatment	Control	24 hours	1		Series5
+Series5_A549_Mock_2	A549	Mock	Mock treatment	Control	24 hours	2		Series5
+Series5_A549_Mock_3	A549	Mock	Mock treatment	Control	24 hours	3		Series5
+Series5_A549_SARS-CoV-2_1	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	1	USA-WA1/2020	Series5
+Series5_A549_SARS-CoV-2_2	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	2	USA-WA1/2020	Series5
+Series5_A549_SARS-CoV-2_3	A549	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	3	USA-WA1/2020	Series5
+Series7_Calu3_Mock_1	Calu3	Mock	Mock treatment	Control	24 hours	1		Series7
+Series7_Calu3_Mock_2	Calu3	Mock	Mock treatment	Control	24 hours	2		Series7
+Series7_Calu3_Mock_3	Calu3	Mock	Mock treatment	Control	24 hours	3		Series7
+Series7_Calu3_SARS-CoV-2_1	Calu3	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	1	USA-WA1/2020	Series7
+Series7_Calu3_SARS-CoV-2_2	Calu3	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	2	USA-WA1/2020	Series7
+Series7_Calu3_SARS-CoV-2_3	Calu3	SARS-CoV-2	SARS-CoV-2 infected (MOI 2)	Infected	24 hours	3	USA-WA1/2020	Series7
+Series8_A549_HPIV3_1	A549	HPIV3	HPIV3 infected (MOI 3)	Infected	24 hours	1	JS	Series8
+Series8_A549_HPIV3_2	A549	HPIV3	HPIV3 infected (MOI 3)	Infected	24 hours	2	JS	Series8
+Series8_A549_HPIV3_3	A549	HPIV3	HPIV3 infected (MOI 3)	Infected	24 hours	3	JS	Series8
+Series8_A549_Mock_1	A549	Mock	Mock treatment	Control	24 hours	1		Series8
+Series8_A549_Mock_2	A549	Mock	Mock treatment	Control	24 hours	2		Series8
+Series8_A549_Mock_3	A549	Mock	Mock treatment	Control	24 hours	3		Series8
+Series8_A549_RSV_1	A549	RSV	RSV infected (MOI 2)	Infected	24 hours	1	A2	Series8
+Series8_A549_RSV_2	A549	RSV	RSV infected (MOI 2)	Infected	24 hours	2	A2	Series8
+Series8_A549_RSV_3	A549	RSV	RSV infected (MOI 2)	Infected	24 hours	3	A2	Series8
+Series9_NHBE_IAV_1	NHBE	IAV	IAV infected (MOI 3)	Infected	12 hours	1	A/Puerto Rico/8/1934 (H1N1)	Series9
+Series9_NHBE_IAV_2	NHBE	IAV	IAV infected (MOI 3)	Infected	12 hours	2	A/Puerto Rico/8/1934 (H1N1)	Series9
+Series9_NHBE_IAV_3	NHBE	IAV	IAV infected (MOI 3)	Infected	12 hours	3	A/Puerto Rico/8/1934 (H1N1)	Series9
+Series9_NHBE_IAV_4	NHBE	IAV	IAV infected (MOI 3)	Infected	12 hours	4	A/Puerto Rico/8/1934 (H1N1)	Series9
+Series9_NHBE_Mock_1	NHBE	Mock	Mock treatment	Control	12 hours	1		Series9
+Series9_NHBE_Mock_2	NHBE	Mock	Mock treatment	Control	12 hours	2		Series9
+Series9_NHBE_Mock_3	NHBE	Mock	Mock treatment	Control	12 hours	3		Series9
+Series9_NHBE_Mock_4	NHBE	Mock	Mock treatment	Control	12 hours	4		Series9
