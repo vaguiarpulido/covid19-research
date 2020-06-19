@@ -74,8 +74,6 @@ metadata_df <- read.csv(path_metadata, sep = '\t') %>% column_to_rownames(var = 
 metadata_df$Condition <- factor(metadata_df$Condition, levels = c("Control", "Infected"))
 
 
-
-
 diff_expr_analysis <- function(
   read_counts_df,
   metadata_df,
@@ -350,9 +348,6 @@ for (batch in unique(metadata_df$Batch)){
       dir_output = dir_output
     )
     
-    
-    
-    
     DESeq.ds <- DESeqDataSetFromMatrix(
       countData = read_counts_df %>% select(all_of(sample_to_take)),
       colData = metadata_sub_df,
@@ -374,32 +369,11 @@ for (batch in unique(metadata_df$Batch)){
       by = 'sample'
     )
     
-    
-    pcaData <- plotPCA(
-      DESeq.vst,
-      intgroup = c("Condition", "Line", 'BiolRep', 'Batch'),
-      returnData = TRUE
-    )
-    percentVar <- round(100 * attr(pcaData, "percentVar"))
-    ggplot(pcaData, aes(x = PC1, y = PC2, color = Condition, shape = Line)) +
-      geom_point(size = 3) +
-      ggtitle(paste0("rlog transformed counts")) + theme(plot.title = element_text(hjust = 0.5)) +
-      xlab(paste0("PC1: ", percentVar[1], "% variance")) +
-      ylab(paste0("PC2: ", percentVar[2], "% variance")) +
-      coord_fixed() +
-      scale_shape_manual(
-        # To display more than 6 different shapes
-        values = seq(0, length(unique(metadata_df$Line)))
-      )+ geom_text(aes(label = BiolRep), vjust = 1, hjust = 0.9, size = 7)
-    
-    
     if(length(unique(metadata_sub_df$Line)) > 1){
       autoplot(pca,
                data = pca_and_meta_df, 
                fill="Condition", 
                shape="Line",
-               #label = TRUE, label.size = 2,
-               #colour = 'Condition',
                size=4) + 
         ggtitle(paste0("vst transformed counts")) + theme(plot.title = element_text(hjust = 0.5)) +
         scale_shape_manual(values=c(21, 22, 24))+ scale_fill_brewer(palette="Dark2") + 
@@ -410,8 +384,6 @@ for (batch in unique(metadata_df$Batch)){
                data = pca_and_meta_df, 
                fill="Condition",
                shape="Treatment",
-               #label = TRUE, label.size = 3,
-               #colour = 'Condition',
                size=4) + 
         ggtitle(paste0("vst transformed counts")) + theme(plot.title = element_text(hjust = 0.5)) +
         scale_shape_manual(values=c(21, 22, 24))+ scale_fill_brewer(palette="Dark2") + 
@@ -424,30 +396,12 @@ for (batch in unique(metadata_df$Batch)){
                data = pca_and_meta_df, 
                fill="Condition", 
                shape="Batch",
-               #label = TRUE, label.size = 2,
-               #colour = 'Condition',
                size=4) + 
         ggtitle(paste0("vst transformed counts")) + theme(plot.title = element_text(hjust = 0.5)) +
         scale_shape_manual(values=c(21, 22, 24))+ scale_fill_brewer(palette="Dark2") + 
         guides(fill = guide_legend(override.aes=list(shape=22)))
       ggsave(filename = file.path(dir_output, 'PCA_ConditionBatch.png'), width = 6, height = 4)
-  
-      
     }
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
