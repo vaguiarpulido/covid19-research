@@ -176,9 +176,9 @@ diff_expr_analysis <- function(
     edgeR_logCPM = edgeR.ql.res.sorted[DEG_All_unfiltered, ]$table$logCPM,
     DESeq2_baseMean = DESeq.res_lfcShrink[DEG_All_unfiltered, ]$baseMean,
     
-    LimmaV_FC = limmaV.res.sorted[DEG_All_unfiltered, ]$logFC,
-    edgeR_FC = edgeR.ql.res.sorted[DEG_All_unfiltered, ]$table$logFC,
-    DESeq2_FC = DESeq.res_lfcShrink[DEG_All_unfiltered, ]$log2FoldChange,
+    LimmaV_log2FC = limmaV.res.sorted[DEG_All_unfiltered, ]$logFC,
+    edgeR_log2FC = edgeR.ql.res.sorted[DEG_All_unfiltered, ]$table$logFC,
+    DESeq2_log2FC = DESeq.res_lfcShrink[DEG_All_unfiltered, ]$log2FoldChange,
     
     LimmaV_padj = limmaV.res.sorted[DEG_All_unfiltered, ]$adj.P.Val,
     edgeR_padj = edgeR.ql.res.sorted[DEG_All_unfiltered, ]$table$FDR,
@@ -208,15 +208,15 @@ diff_expr_analysis <- function(
   DEG_atLeast_i_samples <- rl$values[rl$lengths >= 2]
   
   for(gene_list_and_name in list(
-    list(l = DEG_atLeast_i_samples, name = 'AtLeast2', col_value = 'DESeq2_FC'),
+    list(l = DEG_atLeast_i_samples, name = 'AtLeast2', col_value = 'DESeq2_log2FC'),
     
-    list(l = rownames(subset(limmaV.res.sorted, adj.P.Val <= pv_adj_threshold)), name = 'limmaVoom', col_value = 'LimmaV_FC', dir = '/single_tool'),
-    list(l = rownames(subset(edgeR.ql.res.sorted$table, FDR <= pv_adj_threshold)), name = 'edgeR', col_value = 'edgeR_FC', dir = '/single_tool'),
-    list(l = rownames(subset(DESeq.res_lfcShrink, padj <= pv_adj_threshold)), name = 'DESeq2', col_value = 'DESeq2_FC', dir = '/single_tool'),
+    list(l = rownames(subset(limmaV.res.sorted, adj.P.Val <= pv_adj_threshold)), name = 'limmaVoom', col_value = 'LimmaV_log2FC', dir = '/single_tool'),
+    list(l = rownames(subset(edgeR.ql.res.sorted$table, FDR <= pv_adj_threshold)), name = 'edgeR', col_value = 'edgeR_log2FC', dir = '/single_tool'),
+    list(l = rownames(subset(DESeq.res_lfcShrink, padj <= pv_adj_threshold)), name = 'DESeq2', col_value = 'DESeq2_log2FC', dir = '/single_tool'),
     
-    list(l = rownames(limmaV.res.sorted), name = 'limmaVoom_unfiltered', col_value = 'LimmaV_FC', dir = '/unfiltered'),
-    list(l = rownames(edgeR.ql.res.sorted$table), name = 'edgeR_unfiltered', col_value = 'edgeR_FC', dir = '/unfiltered'),
-    list(l = rownames(DESeq.res_lfcShrink), name = 'DESeq2_unfiltered', col_value = 'DESeq2_FC', dir = '/unfiltered')
+    list(l = rownames(limmaV.res.sorted), name = 'limmaVoom_unfiltered', col_value = 'LimmaV_log2FC', dir = '/unfiltered'),
+    list(l = rownames(edgeR.ql.res.sorted$table), name = 'edgeR_unfiltered', col_value = 'edgeR_log2FC', dir = '/unfiltered'),
+    list(l = rownames(DESeq.res_lfcShrink), name = 'DESeq2_unfiltered', col_value = 'DESeq2_log2FC', dir = '/unfiltered')
   )
   ){
     gene_list <- gene_list_and_name$l
@@ -257,7 +257,7 @@ diff_expr_analysis <- function(
         ensembl_annotation_df[gene_list.under, ] %>% rownames_to_column(var = 'gene_id'),
         DEG_All.expFCpadj[gene_list.under, ] %>% rownames_to_column(var = 'gene_id'),
         by = 'gene_id'
-      ) %>% arrange(desc(!!sym(col_value))) %>%
+      ) %>% arrange(!!sym(col_value)) %>%
         write_tsv(
           file.path(
             dir_xxx_yyy,
@@ -270,7 +270,7 @@ diff_expr_analysis <- function(
         ensembl_annotation_df[gene_list.over, ] %>% rownames_to_column(var = 'gene_id'),
         DEG_All.expFCpadj[gene_list.over, ] %>% rownames_to_column(var = 'gene_id'),
         by = 'gene_id'
-      ) %>% arrange(!!sym(col_value)) %>%
+      ) %>% arrange(desc(!!sym(col_value))) %>%
         write_tsv(
           file.path(
             dir_xxx_yyy,
