@@ -9,7 +9,7 @@ library(rtracklayer)
 library(foreach)
 library(doParallel)
 library(readxl)
-source("covid-gene-expression/project/human-RBP-analysis/rbp_functions.R")
+source("rbp_functions.R")
 
 registerDoParallel(detectCores())
 
