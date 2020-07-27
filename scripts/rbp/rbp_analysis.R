@@ -1,9 +1,4 @@
 ######################################################################################
-#setwd("~/ngc-workspaces/mnt-covid-omics/rbp")
-
-install.packages("foreach")
-install.packages("doParallel")
-install.packages("readxl")
 
 # Import requirements
 library(data.table)
