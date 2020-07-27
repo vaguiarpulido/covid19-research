@@ -1,5 +1,6 @@
 # Isoform Usage and Predictive Functional Consequence Analyses of COVID19 Samples
 IsoformSwitchAnalyzeR R package: https://www.bioconductor.org/packages/release/bioc/html/IsoformSwitchAnalyzeR.html
+
 Version used in this analysis: v1.11.0
 
 # Input
