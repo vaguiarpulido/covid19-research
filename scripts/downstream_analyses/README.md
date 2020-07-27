@@ -10,7 +10,8 @@ cd covid19-research
 * Exploratory analyses (Principal Component Analysis (PCA)) and Differential gene expression analysis
 
 ```
-Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis.R --data-dir data/GSE147507 --output-dir output/diff_expr_analysis
+Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_primary_dataset.R --data-dir data/GSE147507 --output-dir output/diff_expr_analysis/GSE147507
+Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_additional_dataset.R --data-dir data/GSE150316 --output-dir output/diff_expr_analysis/GSE150316
 ```
 
 ### Output
@@ -24,4 +25,7 @@ For each comparison is created a directory containing:
 
 * Enrichment analyses
   - Gene Ontology overexpression analysis
+  # TODO
+  
   - Pathway analysis
+  # TODO
