@@ -19,7 +19,4 @@ Version used in this analysis: v1.11.0
 4) Import differential expression analyses from DESeq2 R package results
 5) Run biological and splicing enrichment analyses and plot graphs
 6) Visualize individual isoforms via volcano plots and switchPlot()
-7) Export isoform features data
-
-
-
+7) Export isoform features data (cross-reference gene names and their product functions using [GeneCards GeneALaCart](https://genealacart.genecards.org))
