@@ -46,7 +46,7 @@ library(DESeq2)
 library(edgeR)
 library(limma)
 library(gplots)
-
+library(ggfortify)
 
 genome_annotation = 'GENCODE_v19'
 
