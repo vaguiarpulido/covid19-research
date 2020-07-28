@@ -6,6 +6,7 @@ Human metabolic network recon 2.2 can be downloaded here:
 
 ## Requirements: 
 Moomin: Matlab, CPLEX, Cobra Toolbox
+
 R: EBSeq, bioMart, data.table
 
 ## Workflow
