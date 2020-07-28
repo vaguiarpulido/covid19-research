@@ -25,7 +25,7 @@ For each comparison is created a directory containing:
   - a subdirectory called *unfiltered* with the lists of the differentially expressed genes detected by each tool used (DESeq2-edgeR-limmaVoom), without applying any filtering;
 
 
-#### Functional Enrichment - Gene Ontology overrepresentation analysis
+### Functional Enrichment - Gene Ontology overrepresentation analysis
 
 GO_COVID.R is the main script for this analysis. 
 Ensembl_to_entrez.R, GOstats.human.R, and Load.GO.R are loaded directly inside the main script.
