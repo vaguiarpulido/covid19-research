@@ -27,8 +27,9 @@ For each comparison is created a directory containing:
 ### Enrichment analyses
 
 #### Gene Ontology overrepresentation analysis
-    GO_COVID.R is the main script for this analysis. Ensembl_to_entrez.R, GOstats.human.R, and Load.GO.R are loaded directly inside the main script.
-    Packages which should be installed: biomaRt, org.Hs.eg.db, GO.db, and GOstats.
+GO_COVID.R is the main script for this analysis. 
+Ensembl_to_entrez.R, GOstats.human.R, and Load.GO.R are loaded directly inside the main script.
+Packages which should be installed: biomaRt, org.Hs.eg.db, GO.db, and GOstats.
 
 The main script is used directly on the folders created from the differencial expression analysis as input. We used DESEq2 lists of differentially expressed genes with a cut-off of 0.05 for the adjusted p-value.
 
