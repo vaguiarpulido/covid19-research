@@ -7,7 +7,7 @@
 - [prepDE.py](http://ccb.jhu.edu/software/stringtie/dl/prepDE.py) (provided by the creators of StringTie)
 
 ## Reference genome
-- GRCh37.p13 (GENCODE Release 19)
+- [GRCh37.p13 (GENCODE Release 19)](https://www.gencodegenes.org/human/release_19.html)
 
 ## Input
 - Fastq.gz files
