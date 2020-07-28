@@ -7,7 +7,7 @@ Several versions of the human metabolic network recon can be downloaded [here](h
 ## Requirements: 
 Moomin: Matlab, CPLEX, Cobra Toolbox
 
-R: EBSeq, bioMart, data.table
+R: EBSeq, data.table
 
 ## Workflow
 1. Differential expression analysis with EBSeq to obtain posterior probability of a gene being differentially expressed.
