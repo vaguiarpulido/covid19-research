@@ -1,0 +1,15 @@
+# Projection of transcriptomic data on the human metabolic network
+
+Moomin runs in matlab, the script Moomim.m is the main script needed to run the analysis.
+Metabolism.R and run_ebseq.R should be run in R prior to Moomin in order to create the input files.
+Human metabolic network recon 2.2 can be downloaded here: 
+
+## Requirements: 
+Moomin: Matlab, CPLEX, Cobra Toolbox
+R: EBSeq, bioMart, data.table
+
+## Workflow
+1. Differential expression analysis with EBSeq to obtain posterior probability of a gene being differentially expressed.
+2. Create output tables for Moomin input.
+3. Load human metabolic network in Cobra Toolbox (Matlab)
+4. Run Moomin script.
