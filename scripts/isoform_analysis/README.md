@@ -1,18 +1,20 @@
 # Isoform Usage and Predictive Functional Consequence Analyses of COVID19 Samples
+
+## Software
 IsoformSwitchAnalyzeR R package: https://www.bioconductor.org/packages/release/bioc/html/IsoformSwitchAnalyzeR.html
 
 Version used in this analysis: v1.11.0
 
-# Input
+## Input
   - StringTie transcript quantification data
   - [CPAT](http://lilab.research.bcm.edu/cpat), [IUPred2A](https://iupred2a.elte.hu), [SignalIP-5.0](http://www.cbs.dtu.dk/services/SignalP), [PFAM Hmmscan](https://www.ebi.ac.uk/Tools/hmmer/search/hmmscan) external webtool analyses results (performed after completion of isoformSwitchAnalysisPart1())
 
-# Output
+## Output
 - Biological consequence and splicing analyses plots
 - Isoform usage vs gene expression volcano plots
 - Isoform features data (i.e. gene & isoform expression; isoform usage (dIF), consequence analysis results)
 
-# Steps
+## Steps
 1) Import RNA-seq StringTie transcript data
 2) Integrate transcript data into aSwitchList
 3) Perform isoformSwitchAnalysisPart1() and isoformSwitchAnalysisPart2()
