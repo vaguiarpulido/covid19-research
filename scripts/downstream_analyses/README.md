@@ -1,20 +1,20 @@
 # Scripts pertaining to downstream analyses of RNAseq data
 
 
-### Usage
+## Usage
 ```
 git clone https://github.com/vaguiarpulido/covid19-research.git
 cd covid19-research
 ```
 
-* Exploratory analyses (Principal Component Analysis (PCA)) and Differential gene expression analysis
+### Exploratory analyses (Principal Component Analysis (PCA)) and Differential gene expression analysis
 
 ```
 Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_primary_dataset.R --data-dir data/GSE147507 --output-dir output/diff_expr_analysis/GSE147507
 Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_additional_dataset.R --data-dir data/GSE150316 --output-dir output/diff_expr_analysis/GSE150316
 ```
 
-### Output
+#### Output
 For each comparison is created a directory containing:
 - a PCA plot with the first 2 Principal Components;
 - a subdirectory containing:
@@ -23,9 +23,14 @@ For each comparison is created a directory containing:
   - a subdirectory called *single_tool* with the lists of the differentially expressed genes detected by each tool used (DESeq2-edgeR-limmaVoom), applying a statistical cut-off of 0.05 for the adjusted p-value;
   - a subdirectory called *unfiltered* with the lists of the differentially expressed genes detected by each tool used (DESeq2-edgeR-limmaVoom), without applying any filtering;
 
-* Enrichment analyses
-  - Gene Ontology overexpression analysis
-  # TODO
+
+### Enrichment analyses
+
+#### Gene Ontology overexpression analysis
+# TODO
   
-  - Pathway analysis
-  # TODO
+#### Pathway analysis
+This script is called with the following command:
+```
+Rscript --vanilla SPIA_Code.Rmd <name_of_DEG_output_from_DESeq2>
+```
