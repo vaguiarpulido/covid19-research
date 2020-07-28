@@ -18,5 +18,5 @@
 # Steps
 1. Map reads to the reference genome using `STAR`
 2. Sort and index alignment file (BAM) using `Samtools`
-3. Perform Transcript quantification using `StringTie`
+3. Perform transcript quantification using `StringTie`
 4. Generate count matrices to be employed by DESeq2 using `prepDE.py`
