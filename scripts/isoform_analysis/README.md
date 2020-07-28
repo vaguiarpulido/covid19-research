@@ -3,11 +3,11 @@ IsoformSwitchAnalyzeR R package: https://www.bioconductor.org/packages/release/b
 
 Version used in this analysis: v1.11.0
 
-# Inputs
+# Input
   - StringTie transcript quantification data
   - [CPAT](http://lilab.research.bcm.edu/cpat), [IUPred2A](https://iupred2a.elte.hu), [SignalIP-5.0](http://www.cbs.dtu.dk/services/SignalP), [PFAM Hmmscan](https://www.ebi.ac.uk/Tools/hmmer/search/hmmscan) external webtool analyses results (performed after completion of isoformSwitchAnalysisPart1())
 
-# Outputs
+# Output
 - Biological consequence and splicing analyses plots
 - Isoform usage vs gene expression volcano plots
 - Isoform features data (i.e. gene & isoform expression; isoform usage (dIF), consequence analysis results)
