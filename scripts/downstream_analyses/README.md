@@ -24,9 +24,9 @@ For each comparison is created a directory containing:
   - a subdirectory called *single_tool* with the lists of the differentially expressed genes detected by each tool used (DESeq2-edgeR-limmaVoom), applying a statistical cut-off of 0.05 for the adjusted p-value;
   - a subdirectory called *unfiltered* with the lists of the differentially expressed genes detected by each tool used (DESeq2-edgeR-limmaVoom), without applying any filtering;
 
-### Enrichment analyses
 
 #### Gene Ontology overrepresentation analysis
+
 GO_COVID.R is the main script for this analysis. 
 Ensembl_to_entrez.R, GOstats.human.R, and Load.GO.R are loaded directly inside the main script.
 Packages which should be installed: biomaRt, org.Hs.eg.db, GO.db, and GOstats.
@@ -34,9 +34,4 @@ Packages which should be installed: biomaRt, org.Hs.eg.db, GO.db, and GOstats.
 The main script is used directly on the folders created from the differencial expression analysis as input. We used DESEq2 lists of differentially expressed genes with a cut-off of 0.05 for the adjusted p-value.
 
 The script generates a subdirectory for each study containing one table (csv format) for each comparison tested.
-  
-#### Pathway analysis
-This script is called with the following command:
-```
-Rscript --vanilla SPIA_Code.Rmd <name_of_DEG_output_from_DESeq2>
-```
+ 
