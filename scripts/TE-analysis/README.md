@@ -1,6 +1,6 @@
 ## TE analysis
 
-### TE tools
+## Requirement: TE tools
 Fastq files were used as input to TEcount module from TEtools:
 
 ```
