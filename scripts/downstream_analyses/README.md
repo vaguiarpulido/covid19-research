@@ -14,7 +14,7 @@ Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_primary_datas
 Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_additional_dataset.R --data-dir data/GSE150316 --output-dir output/diff_expr_analysis/GSE150316
 ```
 
-* Output *
+**Output**
 For each comparison is created a directory containing:
 - a PCA plot with the first 2 Principal Components;
 - a subdirectory containing:
