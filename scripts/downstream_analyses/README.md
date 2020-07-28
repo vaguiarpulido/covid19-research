@@ -15,6 +15,7 @@ Rscript scripts/downstream_analyses/dataExploration_and_DEAnalysis_additional_da
 ```
 
 **Output**
+
 For each comparison is created a directory containing:
 - a PCA plot with the first 2 Principal Components;
 - a subdirectory containing:
