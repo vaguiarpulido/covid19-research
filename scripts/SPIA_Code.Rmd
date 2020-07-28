@@ -1,0 +1,84 @@
+library(graphite)
+library(SPIA)
+
+#define input data
+args=(commandArgs(TRUE))
+if(length(args)==0){
+    print("No arguments supplied.")
+}
+infile <- args[1]
+#infile <- <path_to_list_of_DEGs_from_DESeq2>
+
+setwd("~/")
+top1 = read.csv(file=infile, header = TRUE, sep="\t")
+top1 <- top1[!is.na(top1$entrezgene_id), ]
+top1 <- top1[!duplicated(top1$entrezgene_id), ]
+tg11 <- subset(top1, PValue < 0.05)
+DE_LIST = tg11$logFC
+names(DE_LIST) <- as.vector(tg11$entrezgene_id)
+ALL_Genes <- top1$entrezgene_id
+
+#perform analysis on 5 pathway databases
+results_KEGG <- runSPIA(de=DE_LIST, all=ALL_Genes, "KEGG", nB=5000)
+results_Reactome <- runSPIA(de=DE_LIST, all=ALL_Genes, "Reactome", nB=5000)
+results_BioCarta <- runSPIA(de=DE_LIST, all=ALL_Genes, "BioCarta", nB=5000)
+results_NCI <- runSPIA(de=DE_LIST, all=ALL_Genes, "NCI", nB=5000)
+results_Panther <- runSPIA(de=DE_LIST, all=ALL_Genes, "Panther", nB=5000)
+
+#filter by Bonferroni-corrected p-value, add source of significance to each data frame
+combined_sig_results <- as.data.frame(NULL)
+if(as.vector(dim(results_KEGG)[1])>0){
+  sig_results_KEGG <- results_KEGG[results_KEGG$pGFWER < 0.05, ]
+  if(as.vector(dim(sig_results_KEGG)[1])>0){
+    #sig_results_KEGG <- results_KEGG[results_KEGG$pGFWER < 0.05, ]
+    sig_results_KEGG$SourceDB <- "KEGG"
+  }
+  if(as.vector(dim(sig_results_KEGG)[1])>0){
+    combined_sig_results <- rbind(combined_sig_results,sig_results_KEGG)
+  }
+}
+if(as.vector(dim(results_Reactome)[1])>0){
+  sig_results_Reactome <- results_Reactome[results_Reactome$pGFWER < 0.05, ]
+  if(as.vector(dim(sig_results_Reactome)[1])>0){
+    sig_results_Reactome$SourceDB <- "Reactome"
+  }
+#  sig_results_Reactome <- results_Reactome[results_Reactome$pG < 0.05, ]
+  if(as.vector(dim(sig_results_Reactome)[1])>0){
+    combined_sig_results <- rbind(combined_sig_results,sig_results_Reactome)
+  }
+}
+if(as.vector(dim(results_BioCarta)[1])>0){
+  sig_results_BioCarta <- results_BioCarta[results_BioCarta$pGFWER < 0.05, ]
+  if(as.vector(dim(sig_results_BioCarta)[1])>0){
+    sig_results_BioCarta$SourceDB <- "BioCarta"
+  }
+  #sig_results_BioCarta <- results_BioCarta[results_BioCarta$pG < 0.05, ]
+  if(as.vector(dim(sig_results_BioCarta)[1])>0){
+    combined_sig_results <- rbind(combined_sig_results,sig_results_BioCarta)
+  }
+}
+if(as.vector(dim(results_NCI)[1])>0){
+  sig_results_NCI <- results_NCI[results_NCI$pGFWER < 0.05, ]
+  if(as.vector(dim(sig_results_NCI)[1])>0){
+    sig_results_NCI$SourceDB <- "NCI"
+  }
+  #sig_results_NCI <- results_NCI[results_NCI$pGFWER < 0.05, ]
+  #sig_results_NCI <- results_NCI[results_NCI$pG < 0.05, ]
+  if(as.vector(dim(sig_results_NCI)[1])>0){
+    combined_sig_results <- rbind(combined_sig_results,sig_results_NCI)
+  }
+}
+if(as.vector(dim(results_Panther)[1])>0){
+  sig_results_Panther <- results_Panther[results_Panther$pGFWER < 0.05, ]
+  if(as.vector(dim(sig_results_Panther)[1])>0){
+    sig_results_Panther$SourceDB <- "Panther"
+  }
+  #sig_results_Panther <- results_Panther[results_Panther$pG < 0.05, ]
+  if(as.vector(dim(sig_results_Panther)[1])>0){
+    combined_sig_results <- rbind(combined_sig_results,sig_results_Panther)
+  }
+  #dataset_vectorNames <- c(dataset_vectorNames,deparse(substitute(sig_results_Panther)))
+}
+time <- gsub(" ", "_", Sys.time())
+time <- gsub(":", "-", time)
+write.csv(combined_sig_results, file = paste0(infile,"_",time,"_SPIA_Results.csv"))
