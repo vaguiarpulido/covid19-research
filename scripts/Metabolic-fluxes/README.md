@@ -1,7 +1,7 @@
 # Projection of transcriptomic data on the human metabolic network
 
 Moomin runs in matlab, the script Moomim.m is the main script needed to run the analysis.
-Metabolism.R and run_ebseq.R should be run in R prior to Moomin in order to create the input files.
+EBSeq.R and the function run_ebseq.R should be run in R prior to Moomin in order to create the input files.
 Human metabolic network recon 2.2 can be downloaded here: 
 
 ## Requirements: 
