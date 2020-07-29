@@ -14,7 +14,7 @@ Version used in this analysis: v1.11.0
 - Isoform usage vs gene expression volcano plots
 - Isoform features data (i.e. gene & isoform expression; isoform usage (dIF), consequence analysis results)
 
-## Steps
+## Workflow
 1) Import RNA-seq StringTie transcript data
 2) Integrate transcript data into aSwitchList
 3) Perform isoformSwitchAnalysisPart1() and isoformSwitchAnalysisPart2()
