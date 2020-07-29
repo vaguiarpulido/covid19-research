@@ -1,6 +1,13 @@
 # Genome-wide bioinformatic analyses predict key host and viral factors in SARS-CoV-2 pathogenesis
 
-The novel betacoronavirus named Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) caused a worldwide pandemic (COVID-19) after initially emerging in Wuhan, China. Here we applied a novel, comprehensive bioinformatic strategy to public RNA sequencing and viral genome sequencing data, to better understand how SARS-CoV-2 interacts with human cells. To our knowledge, this is the first meta-analysis to predict host factors that play a specific role in SARS-CoV-2 pathogenesis, distinct from other respiratory viruses. We identified differentially expressed genes, isoforms and transposable element families that are specifically altered in SARS-CoV-2 infected cells. Well-known immunoregulators including CSF2, IL32, IL6 and SERPINA3 were differentially expressed, while immunoregulatory transposable element families were upregulated. We predicted conserved interactions between the SARS-CoV-2 genome and human RNA-binding proteins such as the heterogeneous nuclear ribonucleoprotein A1 (hnRNPA1) and eukaryotic initiation factor 4 (eIF4b), that may play important roles in the viral life cycle. We also detected four viral sequence variants in the spike, polymerase, and nonstructural proteins that may affect the severity of COVID-19. The host factors we identified likely represent important mechanisms in the disease profile of this pathogen, and could be targeted by prophylactics and/or therapeutics against SARS-CoV-2.
+The novel betacoronavirus named Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) caused a worldwide pandemic (COVID-19) after initially emerging in Wuhan, China. To better understand how SARS-CoV-2 interacts with human cells, we devised a novel, comprehensive bioinformatic strategy to analyze public RNA sequencing and viral genome sequencing data, which included:
+1. Detection of differentially expressed human genes along with functional and signaling pathway enrichment analyses.
+2. Analysis of changes in transcript isoform expression and usage
+3. Identification of transposable elements (TEs) deregulated during infection.
+4. Prediction of conserved interactions between viral RNA and human RNA-binding proteins (RBPs).
+5. Prediction of viral sequence variants potentially affecting host response.
 
-This GitHub repository contains the code to reproduce the analyses included in the manuscript submission.
+To our knowledge, this is the *first meta-analysis to predict host factors that play a specific role in SARS-CoV-2 pathogenesis, distinct from other respiratory viruses*. 
+
+This GitHub repository contains the code to reproduce the analyses included in our manuscript submission.
 
