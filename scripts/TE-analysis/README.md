@@ -1,4 +1,4 @@
-## TE analysis
+# TE analysis
 
 ## Requirements
 [TETools](https://github.com/l-modolo/TEtools)
