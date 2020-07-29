@@ -10,7 +10,8 @@ Moomin: Matlab, CPLEX, Cobra Toolbox
 R: EBSeq, data.table
 
 ## Workflow
-1. Differential expression analysis with EBSeq to obtain posterior probability of a gene being differentially expressed.
-2. Create tables for Moomin input.
-3. Load human metabolic network in Cobra Toolbox (Matlab)
-4. Run Moomin script.
+1. Differential expression analysis with EBSeq in R to obtain posterior probability of a gene being differentially expressed;
+2. Create tables for Moomin input in R;
+3. Load human metabolic network in Cobra Toolbox in Matlab;
+4. Change the model gene IDs (in entrez_gene) to ensembl_gene_id dictionary;
+5. Run Moomin on the modified model.
