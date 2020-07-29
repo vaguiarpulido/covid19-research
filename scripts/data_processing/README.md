@@ -15,7 +15,7 @@
 ## Output
 - Count matrices
 
-# Steps
+## Workflow
 1. Map reads to the reference genome using `STAR`
 2. Sort and index alignment file (BAM) using `Samtools`
 3. Perform transcript quantification using `StringTie`
