@@ -9,7 +9,7 @@ The novel betacoronavirus named Severe Acute Respiratory Syndrome Coronavirus 2 
 
 <figure>
   <p align="center">
-  <img src="Fig1.png" width="700" align="center">
+  <img src="figures/Fig1.png" width="700" align="center">
   </p>
 </figure>
 
