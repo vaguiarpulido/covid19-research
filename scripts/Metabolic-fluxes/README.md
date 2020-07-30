@@ -4,6 +4,8 @@
 **EBSeq.R** and the function **run_ebseq.R** should be run in R prior to Moomin in order to create the input files.
 Several versions of the human metabolic network recon can be downloaded [here](https://www.vmh.life/#downloadview).
 
+Alternatively, if you don't have access to Matlab, there's a new implementation of Moomin in [Julia](https://github.com/htpusa/moominJL).
+
 ## Requirements: 
 Moomin: Matlab, CPLEX, [Cobra Toolbox](https://opencobra.github.io/cobratoolbox/stable/)
 
