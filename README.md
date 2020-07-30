@@ -11,3 +11,9 @@ To our knowledge, this is the *first meta-analysis to predict host factors that 
 
 This GitHub repository contains the code to reproduce the analyses included in our manuscript submission.
 
+
+<figure>
+  <p align="center">
+  <img src="Fig1.png" width="700" align="center">
+  </p>
+</figure>
