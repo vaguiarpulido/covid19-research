@@ -7,13 +7,15 @@ The novel betacoronavirus named Severe Acute Respiratory Syndrome Coronavirus 2 
 4. Prediction of conserved interactions between viral RNA and human RNA-binding proteins (RBPs).
 5. Prediction of viral sequence variants potentially affecting host response.
 
-To our knowledge, this is the *first meta-analysis to predict host factors that play a specific role in SARS-CoV-2 pathogenesis, distinct from other respiratory viruses*. 
-
-This GitHub repository contains the code to reproduce the analyses included in our manuscript submission.
-
-
 <figure>
   <p align="center">
   <img src="Fig1.png" width="700" align="center">
   </p>
 </figure>
+
+To our knowledge, this is the *first meta-analysis to predict host factors that play a specific role in SARS-CoV-2 pathogenesis, distinct from other respiratory viruses*. 
+
+This GitHub repository contains the code to reproduce the analyses included in our manuscript submission ([preprint available on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.28.225581v1)).
+
+
+
