@@ -7,15 +7,15 @@ if(!requireNamespace('optparse', quietly = TRUE)){
 }
 library("optparse")
 
-option_list = list(
+option_list <- list(
   make_option(c("-d", "--data-dir"), type="character", default=NULL, 
               help="input dataset directory", metavar="character"),
   make_option(c("-o", "--output-dir"), type="character", default=NULL, 
               help="output directory", metavar="character")
 ); 
 
-opt_parser = OptionParser(option_list=option_list);
-opt = parse_args(opt_parser);
+opt_parser <- OptionParser(option_list=option_list);
+opt <- parse_args(opt_parser);
 
 if (is.null(opt$d)){
   print_help(opt_parser)
@@ -48,14 +48,14 @@ library(limma)
 library(gplots)
 library(ggfortify)
 
-genome_annotation = 'GENCODE_v19'
+genome_annotation <- 'GENCODE_v19'
 
 #====================================================================================
 # Paths and directories
 #======================
-path_metadata = file.path(opt$d, 'metadata.tsv')
-path_read_count = file.path(opt$d, 'gene_count_matrix.csv')
-path_ensembl_annotation_all = file.path(opt$d, paste0('ensembl_annotation.all.', genome_annotation, '.txt'))
+path_metadata <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', 'metadata.tsv')
+path_read_count <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', 'gene_count_matrix.csv')
+path_ensembl_annotation_all <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', paste0('ensembl_annotation.all.', genome_annotation, '.txt'))
 #====================================================================================
 
 #====================================================================================
@@ -72,6 +72,26 @@ ensembl_annotation_df <- read.csv(path_ensembl_annotation_all, header = T, sep =
 
 metadata_df <- read.csv(path_metadata, sep = '\t') %>% column_to_rownames(var = 'SampleCode')
 metadata_df$Condition <- factor(metadata_df$Condition, levels = c("Control", "Infected"))
+
+normalized_counts <- counts(DESeq.ds, normalized=TRUE)
+
+ensg_to_plot <- 'ENSG00000136244'
+plotCounts(
+  dds = DESeq.ds,
+  intgroup = c("Condition"),
+  # gene = gsub('...$', '', ensg_to_plot),
+  gene = ensg_to_plot,
+  normalized = TRUE, transform = TRUE,
+  returnData = F, # To save the output of plotCounts() to a variable
+)
+d <- plotCounts(
+  dds = DESeq.ds,
+  intgroup = c("Condition"),
+  # gene = gsub('...$', '', ensg_to_plot),
+  gene = ensg_to_plot,
+  normalized = TRUE, transform = TRUE,
+  returnData = TRUE, # To save the output of plotCounts() to a variable
+)
 
 
 diff_expr_analysis <- function(
@@ -157,7 +177,7 @@ diff_expr_analysis <- function(
   )
   
   # Results
-  dir_xxx = file.path(
+  dir_xxx <- file.path(
     dir_output,
     paste0('design_', gsub("\\ \\+\\ ", "", as.character(design_formula)[2]))
   )
@@ -230,13 +250,13 @@ diff_expr_analysis <- function(
     
     print(paste0(name_tools, ': ', length(gene_list), ' = ', length(gene_list.under), ' (under) + ', length(gene_list.over), ' (over)'))
     
-    dir_xxx_yyy = paste0(dir_xxx, gene_list_and_name$dir)
+    dir_xxx_yyy <- paste0(dir_xxx, gene_list_and_name$dir)
     print(dir_xxx_yyy)
     dir.create(dir_xxx_yyy, recursive = TRUE, showWarnings = FALSE)
     if (name_tools == 'AtLeast2'){
-      name_tools = ''
+      name_tools <- ''
     }else{
-      name_tools = paste0(name_tools, '.')
+      name_tools <- paste0(name_tools, '.')
     }
     
     if (!is.null(ensembl_annotation_df)){
@@ -309,11 +329,11 @@ diff_expr_analysis <- function(
   }
 }
 
-group_str = 'Condition'
-numerator_level_str = 'Infected'
-denominator_level_str = 'Control'
-coef = 'ConditionInfected'
-pv_adj_threshold = 0.05
+group_str <- 'Condition'
+numerator_level_str <- 'Infected'
+denominator_level_str <- 'Control'
+coef <- 'ConditionInfected'
+pv_adj_threshold <- 0.05
 design_formula <- ~ Condition
 
 for (batch in unique(metadata_df$Batch)){
