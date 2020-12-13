@@ -75,7 +75,10 @@ if (all(colnames(read_countsAll_df) %in% rownames(metadataAll_df))){
 
 # Remove the outliers
 sample_to_take <- metadataAll_df %>% rownames_to_column(var = 'sample') %>%
-  filter(Source %in% c('lung') & !sample %in% c('case4-lung1', 'case4-lung2', 'case5-lung2') & !Case %in% c('caseA', 'caseB', 'caseC', 'caseD', 'caseE', 'caseF', 'caseG', 'caseH', 'caseI', 'caseJ')) %>%
+  filter(Source %in% c('lung') & 
+           !sample %in% c('case4-lung1', 'case4-lung2', 'case5-lung2') & 
+           !Case %in% c('case6', 'case7', 'case10') &
+           !Case %in% c('caseA', 'caseB', 'caseC', 'caseD', 'caseE', 'caseF', 'caseG', 'caseH', 'caseI', 'caseJ')) %>%
   pull(sample)
 
 metadata_sub_df <- metadataAll_df %>% rownames_to_column(var = 'sample') %>% filter(sample %in% sample_to_take) %>% column_to_rownames(var = 'sample')
