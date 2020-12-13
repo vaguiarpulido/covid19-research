@@ -376,7 +376,7 @@ for (case in metadata_sub_df %>% filter(!Case %in% c('control')) %>% pull(Case) 
     metadata_sub_df %>% rownames_to_column(var = 'sample') %>% dplyr::select(sample, Source, Case, PoolNo),
     pca$x %>% as.data.frame() %>% select(PC1, PC2) %>% rownames_to_column(var = 'sample'),
     by = 'sample'
-  )
+  ) %>% column_to_rownames('sample')
 
   autoplot(pca,
            data = pca_and_meta_df,

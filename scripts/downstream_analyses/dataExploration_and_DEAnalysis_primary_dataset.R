@@ -387,7 +387,7 @@ for (batch in unique(metadata_df$Batch)){
       metadata_sub_df %>% rownames_to_column(var = 'sample') %>% dplyr::select(sample, Line, Virus, Treatment, Condition, BiolRep, Batch),
       pca$x %>% as.data.frame() %>% select(PC1, PC2) %>% rownames_to_column(var = 'sample'),
       by = 'sample'
-    )
+    ) %>% column_to_rownames('sample')
     
     if(length(unique(metadata_sub_df$Line)) > 1){
       autoplot(pca,
