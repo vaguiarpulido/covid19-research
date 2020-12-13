@@ -53,9 +53,9 @@ genome_annotation <- 'GENCODE_v19'
 #====================================================================================
 # Paths and directories
 #======================
-path_metadata <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', 'metadata.tsv')
-path_read_count <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', 'gene_count_matrix.csv')
-path_ensembl_annotation_all <- file.path('/home/guarracino/git/covid19-research/data/GSE147507/', paste0('ensembl_annotation.all.', genome_annotation, '.txt'))
+path_metadata = file.path(opt$d, 'metadata.tsv')
+path_read_count = file.path(opt$d, 'gene_count_matrix.csv')
+path_ensembl_annotation_all = file.path(opt$d, paste0('ensembl_annotation.all.', genome_annotation, '.txt'))
 #====================================================================================
 
 #====================================================================================
@@ -74,25 +74,6 @@ metadata_df <- read.csv(path_metadata, sep = '\t') %>% column_to_rownames(var = 
 metadata_df$Condition <- factor(metadata_df$Condition, levels = c("Control", "Infected"))
 
 normalized_counts <- counts(DESeq.ds, normalized=TRUE)
-
-ensg_to_plot <- 'ENSG00000136244'
-plotCounts(
-  dds = DESeq.ds,
-  intgroup = c("Condition"),
-  # gene = gsub('...$', '', ensg_to_plot),
-  gene = ensg_to_plot,
-  normalized = TRUE, transform = TRUE,
-  returnData = F, # To save the output of plotCounts() to a variable
-)
-d <- plotCounts(
-  dds = DESeq.ds,
-  intgroup = c("Condition"),
-  # gene = gsub('...$', '', ensg_to_plot),
-  gene = ensg_to_plot,
-  normalized = TRUE, transform = TRUE,
-  returnData = TRUE, # To save the output of plotCounts() to a variable
-)
-
 
 diff_expr_analysis <- function(
   read_counts_df,

@@ -51,8 +51,8 @@ library(ggfortify)
 #====================================================================================
 # Paths and directories
 #======================
-path_metadata <- file.path('/home/guarracino/git/covid19-research/data/GSE150316/', 'metadata.tsv')
-path_read_count <- file.path('/home/guarracino/git/covid19-research/data/GSE150316/', 'GSE150316_RawCounts_Final.txt')
+path_metadata = file.path(opt$d, 'metadata.tsv')
+path_read_count = file.path(opt$d, 'GSE150316_RawCounts_Final.txt')
 #====================================================================================
 
 #====================================================================================
@@ -339,23 +339,22 @@ for (case in metadata_sub_df %>% filter(!Case %in% c('control')) %>% pull(Case) 
 
   metadata_sub_sub_df$Case <- factor(metadata_sub_sub_df$Case, levels = c('control', case))
 
-  #diff_expr_analysis(
-  #  read_counts_df = read_countsAll_df %>% select(all_of(sub_sample_to_take)),
-  #  metadata_df = metadata_sub_sub_df,
+  diff_expr_analysis(
+    read_counts_df = read_countsAll_df %>% select(all_of(sub_sample_to_take)),
+    metadata_df = metadata_sub_sub_df,
 
-  #  ensembl_annotation_df = NULL,
-  #  group_str = group_str,
-  #  numerator_level_str = numerator_level_str,
-  #  denominator_level_str = denominator_level_str,
-  #  coef = coef,
+    ensembl_annotation_df = NULL,
+    group_str = group_str,
+    numerator_level_str = numerator_level_str,
+    denominator_level_str = denominator_level_str,
+    coef = coef,
 
-  #  design_formula = design_formula,
+    design_formula = design_formula,
 
-  #  pv_adj_threshold = pv_adj_threshold,
+    pv_adj_threshold = pv_adj_threshold,
 
-  #  dir_output = dir_output
-  #)
-  dir.create(dir_output, recursive = TRUE, showWarnings = FALSE)
+    dir_output = dir_output
+  )
 
   DESeq.ds <- DESeqDataSetFromMatrix(
     countData = read_countsAll_df %>% select(all_of(sub_sample_to_take)),
