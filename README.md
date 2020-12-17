@@ -43,3 +43,6 @@ Instructions and code to analyze transposable element activity in virus-infected
 
 ### [RBP analysis](https://github.com/vaguiarpulido/covid19-research/tree/master/scripts/rbp)
 Instructions and code to predict putative binding sites for human RBPs on viral genome sequences, and to analyze binding site conservation across multiple SARS-CoV-2 isolates.
+
+### Viral variant-phenotype association
+For this analysis, we used the mega-CATS algorithm as described [here](https://github.com/bpickett/megaCATS).
