@@ -36,7 +36,7 @@ To our knowledge, this is the *first meta-analysis to predict host factors that 
 
 ## Contents
 
-This GitHub repository contains the code to reproduce the analyses included in our manuscript submission ([preprint available on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.28.225581v1)).
+This GitHub repository contains the code to reproduce the analyses included in our manuscript submission ([preprint available on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.28.225581v1)). This code is citable as: [![DOI](https://zenodo.org/badge/264233353.svg)](https://zenodo.org/badge/latestdoi/264233353)
 
 Each of the following sections contains instructions and code to replicate our analyses into specific aspects of SARS-CoV-2 host-virus interactions.
 
