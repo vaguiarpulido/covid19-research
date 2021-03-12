@@ -66,4 +66,4 @@ For this analysis, we used the mega-CATS algorithm as described [here](https://g
 
 ## Supplementary materials
 
-Supplementary materials for this work can be downloaded at:  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4568590.svg)](https://doi.org/10.5281/zenodo.4568590)
+Supplementary materials for this work can be downloaded at:  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4601468.svg)](https://doi.org/10.5281/zenodo.4601468)
