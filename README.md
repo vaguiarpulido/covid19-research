@@ -36,7 +36,7 @@ To our knowledge, this is the *first meta-analysis to predict host factors that 
 
 ## Contents
 
-This GitHub repository contains the code to reproduce the analyses included in our manuscript submission ([preprint available on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.28.225581v1)). This code is citable as: [![DOI](https://zenodo.org/badge/264233353.svg)](https://zenodo.org/badge/latestdoi/264233353)
+This GitHub repository contains the code to reproduce the analyses included in our publication, [Genome-wide bioinformatic analyses predict key host and viral factors in SARS-CoV-2 pathogenesis](https://www.nature.com/articles/s42003-021-02095-0).
 
 Each of the following sections contains instructions and code to replicate our analyses into specific aspects of SARS-CoV-2 host-virus interactions.
 
@@ -67,3 +67,13 @@ For this analysis, we used the mega-CATS algorithm as described [here](https://g
 ## Supplementary materials
 
 Supplementary materials for this work can be downloaded at:  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4644596.svg)](https://doi.org/10.5281/zenodo.4644596)
+
+## Citation
+
+Please cite our paper as follows:
+
+Ferrarini, M.G., Lal, A., Rebollo, R. et al. Genome-wide bioinformatic analyses predict key host and viral factors in SARS-CoV-2 pathogenesis. Commun Biol 4, 590 (2021). https://doi.org/10.1038/s42003-021-02095-0
+
+The code in this repository can also be cited separately as:
+
+[![DOI](https://zenodo.org/badge/264233353.svg)](https://zenodo.org/badge/latestdoi/264233353)
